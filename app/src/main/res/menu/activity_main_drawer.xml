@@ -6,32 +6,32 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_breakfast"
             android:icon="@drawable/ic_menu_camera"
             android:title="Завтраки" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_main_course"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Основные блюда" />
 
         <item
-            android:id="@+id/nav_gallery1"
+            android:id="@+id/nav_garnish"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Гарниры" />
         <item
-            android:id="@+id/nav_gallery2"
+            android:id="@+id/nav_soups"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Супы" />
         <item
-            android:id="@+id/nav_gallery3"
+            android:id="@+id/nav_salads"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Салаты" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_desserts"
             android:icon="@drawable/ic_menu_camera"
             android:title="Десерты" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_drinks"
             android:icon="@drawable/menu_drink"
             android:title="Напитки" />
     </group>

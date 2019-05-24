@@ -3,6 +3,8 @@ package com.example.vvniz.mymenu01;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -78,22 +80,49 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        //создадим новый фрагмент
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_breakfast) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            fragmentClass = BreackfastFragment.class;
+        } else if (id == R.id.nav_main_course) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_garnish) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_salads) {
+
+        } else if (id == R.id.nav_soups) {
+
+        } else if (id == R.id.nav_desserts) {
+
+        } else if (id == R.id.nav_drinks) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Вставляем фрагмент, заменяя текущий фрагмент
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        //Выделяем выбранный пункт меню в шторке
+        item.setChecked(true);
+        //выводим выбранный пункт в заголовке
+        setTitle(item.getTitle());
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
